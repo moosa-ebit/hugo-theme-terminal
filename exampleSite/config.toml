@@ -14,7 +14,7 @@ pagination.pagerSize = 5
 
 [languages]
   [languages.en]
-    title = "Terminal"
+    title = "eBit Site"
     subtitle = "A simple, retro theme for Hugo"
     keywords = ""
     copyright = ""
@@ -23,7 +23,7 @@ pagination.pagerSize = 5
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "Terminal"
+      logoText = "eBit Site"
       logoHomeLink = "/"
 
     [languages.en.menu]
