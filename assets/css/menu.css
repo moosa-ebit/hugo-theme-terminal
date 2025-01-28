@@ -2,6 +2,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin: 0px 1px;
+}
+
+.navigation-menu-post {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   margin: 20px 1px;
 }
 

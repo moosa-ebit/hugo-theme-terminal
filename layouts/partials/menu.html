@@ -1,4 +1,7 @@
-<nav class="navigation-menu">
+{{ if $.IsNode }}
+  <p>{{ with $.Site.Params.description }}{{ . }}{{ else }}Terminal{{ end }}</p>
+{{ end }}
+ <nav {{ if $.IsNode }} class="navigation-menu" {{ else }} class="navigation-menu-post" {{ end }}> 
   <ul class="navigation-menu__inner menu--desktop">
     {{ if or $.Site.Params.showMenuItems ( eq .Site.Params.showMenuItems 0 ) }}
       {{ range sort first $.Site.Params.showMenuItems $.Site.Menus.main "Weight" }}
