@@ -1,7 +1,12 @@
-{{ if $.IsNode }}
-  <p>{{ with $.Site.Params.description }}{{ . }}{{ else }}Terminal{{ end }}</p>
+{{ if $.IsHome }}
+{{ $pages := (where .Site.RegularPages "Section" "posts")}}
+{{ $bored_count := len (where $pages ".Params.Tags" "intersect" (slice "Bored")) }}
+<div>
+  <p>{{ with $.Site.Params.description }}{{ . }}{{ else }}Terminal{{ end }}
+     There are currently {{len (where .Site.RegularPages "Section" "posts")}} main posts published and {{ $bored_count }} posts tagged as bored.</p>
+</div>
 {{ end }}
- <nav {{ if $.IsNode }} class="navigation-menu" {{ else }} class="navigation-menu-post" {{ end }}> 
+ <nav {{ if $.IsHome }} class="navigation-menu" {{ else }} class="navigation-menu-post" {{ end }}> 
   <ul class="navigation-menu__inner menu--desktop">
     {{ if or $.Site.Params.showMenuItems ( eq .Site.Params.showMenuItems 0 ) }}
       {{ range sort first $.Site.Params.showMenuItems $.Site.Menus.main "Weight" }}
